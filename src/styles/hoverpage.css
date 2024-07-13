@@ -1,0 +1,18 @@
+.main {
+  background-color: #000000;
+  color: white;
+}
+.hover {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100svh;
+  font-size: 3.5em;
+  font-weight: bold;
+}
+.hover h1 {
+  background: linear-gradient(to right, #0a00b0 0%, #98b5ff 50%, #360077 100%);
+  -webkit-background-clip: text;
+  color: transparent;
+  display: inline-block;
+}
