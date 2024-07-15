@@ -24,7 +24,7 @@ function Homepage() {
     return (
         <div>
             <Navbar></Navbar>
-            <div className="homepage" style={{ position: 'relative', top: '5.6rem' }}>
+            <div className="homepage" style={{ position: 'relative', top: '5.6rem',  overflow: 'hidden' }}>
                 <Homecontent></Homecontent>
                 <div>
                     <h1 className='hint'>Hint: move your cursor</h1>

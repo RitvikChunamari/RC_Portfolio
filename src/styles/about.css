@@ -3,7 +3,6 @@
   color: white;
   display: flex;
   justify-content: center;
-  /* min-height: 100svh; */
   font-size: 24px;
   font-weight: bold;
   gap: 1em;
@@ -18,27 +17,29 @@
   align-items: center;
   justify-content: center;
   border-radius: 20px;
+  position: relative;
 }
 
 .skills {
   background-color: #ffffff;
   color: black;
-  /* padding: 0px 50px 53px 50px; */
-  height: 50%;
+  height: 60%;
   justify-content: flex-start;
 }
 .cert {
   background-color: #ffffff;
   color: black;
-  height: 50%;
   justify-content: flex-start;
+  height: 40%;
 }
 
 .content {
   font-size: 1.45em;
   font-weight: 300;
   line-height: 1.5em;
-  /* justify-content: center; */
+  position: relative;
+  width: 100%;
+  /* height: 100%; */
 }
 
 .box h2 {
@@ -60,7 +61,8 @@
   height: 100%;
   font-weight: 600;
   background-color: #ffffff;
-  /* width: 100%; */
+  position: relative;
+  z-index: 1;
 }
 
 .abt {
@@ -78,6 +80,8 @@
   grid-template-rows: repeat(3, 1fr);
   column-gap: 0.5em;
   row-gap: 0.9em;
+  position: relative;
+  bottom: -2em;
 }
 .certgrid {
   display: grid;
@@ -101,6 +105,26 @@
   z-index: 10;
   transform: scale(1.1);
 }
-/* .gridbg {
-  background-color: aquamarine;
-} */
+.skillcarousel {
+  display: flex;
+  gap: 0.5em;
+  position: absolute;
+  align-items: center;
+  justify-content: center;
+  top: 5em;
+  left: 0;
+  right: 0;
+  z-index: 10;
+  background-color: white;
+}
+.carouselCont {
+  display: none;
+}
+
+.skillCont {
+  width: 100%;
+  position: relative;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+}

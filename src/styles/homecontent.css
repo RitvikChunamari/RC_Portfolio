@@ -34,13 +34,13 @@
   padding-bottom: 20px;
 }
 .designation {
-  font-size: 1.9em;
+  font-size: 1.69em;
   line-height: 1.3em;
   font-weight: 450;
   color: gray;
-  width: 47ch;
   padding-left: 5px;
   text-align: justify;
+  color: white;
 }
 .name {
   background: linear-gradient(to right, #8fb1f5, #0f5fff, #023db2);

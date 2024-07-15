@@ -13,8 +13,15 @@ function About() {
             <div className="col2">
                 <div className='box skills'>
                     <h2>Skills</h2>
+                    <div className="carouselCont">
+                        <div className="skillcarousel">
+                            <Skillbtn btnName={"UX Design"} className={"grid-item"}></Skillbtn>
+                            <Skillbtn btnName={"Figma"} className={"grid-item"}></Skillbtn>
+                            <Skillbtn btnName={"Figma"} className={"grid-item"}></Skillbtn>
+                        </div>
+                    </div>
                     <div className="content">
-                        <div className="gridbg">
+                        <div className="skillCont">
                             <div className='skillgrid '>
                                 <Skillbtn btnName={"UX Design"} className={"grid-item"}></Skillbtn>
                                 <Skillbtn btnName={"Figma"} className={"grid-item"}></Skillbtn>
@@ -25,9 +32,10 @@ function About() {
                                 <Skillbtn btnName={"Design Thinking"} className={"grid-item"}></Skillbtn>
                                 <Skillbtn btnName={"Problem Solving"} className={"grid-item"}></Skillbtn>
                                 <Skillbtn btnName={"Analytical"} className={"grid-item"}></Skillbtn>
+                                <div class="overlay" id="overlay"></div>
+
                             </div>
                         </div>
-
                     </div>
                 </div>
                 <div className='box cert'>
