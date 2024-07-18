@@ -1,7 +1,31 @@
-import React from 'react'
-import Skillbtn from './Skillbtn'
-import '../styles/about.css'
-function About() {
+// src/ButtonGrid.js
+import React, { useState } from 'react';
+import Skillbtn from '../components/Skillbtn';
+import '../styles/about.css';
+
+const About = () => {
+    const [hoveredButton, setHoveredButton] = useState(null);
+
+    const buttons = [
+        { name: 'UX Design', content: 'Designing intuitive user interfaces and improving user experience' },
+        { name: 'Figma', content: 'Collaborative interface design tool for team projects' },
+        { name: 'Photoshop', content: ' a software application for image editing, graphic design, and digital art' },
+        { name: 'Stock Trading', content: 'Buying and selling stocks in the financial markets' },
+        { name: 'Video Editing', content: 'Creating and editing video content for various purposes' },
+        { name: 'Team work', content: 'Collaborating effectively with team members' },
+        { name: 'Design Thinking', content: 'Innovative problem-solving through creative design' },
+        { name: 'Problem Solving', content: 'Analyzing and resolving complex issues' },
+        { name: 'Analytical', content: 'A Process of identifying and solving problems in many different contexts' }
+    ];
+
+    const handleMouseEnter = (index) => {
+        setHoveredButton(index);
+    };
+
+    const handleMouseLeave = () => {
+        setHoveredButton(null);
+    };
+
     return (
         <div className='container'>
             <div className='box about'>
@@ -22,18 +46,33 @@ function About() {
                     </div>
                     <div className="content">
                         <div className="skillCont">
-                            <div className='skillgrid '>
-                                <Skillbtn btnName={"UX Design"} className={"grid-item"}></Skillbtn>
-                                <Skillbtn btnName={"Figma"} className={"grid-item"}></Skillbtn>
-                                <Skillbtn btnName={"Photoshop"} className={"grid-item"}></Skillbtn>
-                                <Skillbtn btnName={"Stock Trading"} className={"grid-item"}></Skillbtn>
-                                <Skillbtn btnName={"Video Editing"} className={"grid-item"}></Skillbtn>
-                                <Skillbtn btnName={"Team Work"} className={"grid-item"}></Skillbtn>
-                                <Skillbtn btnName={"Design Thinking"} className={"grid-item"}></Skillbtn>
-                                <Skillbtn btnName={"Problem Solving"} className={"grid-item"}></Skillbtn>
-                                <Skillbtn btnName={"Analytical"} className={"grid-item"}></Skillbtn>
-                                <div class="overlay" id="overlay"></div>
-
+                            <div className="grid">
+                                {buttons.map((button, index) => (
+                                    <div
+                                        key={index}
+                                        className="button-container"
+                                        onMouseEnter={() => handleMouseEnter(index)}
+                                        onMouseLeave={handleMouseLeave}
+                                    >
+                                        <Skillbtn className="grid-button" btnName={button.name} />
+                                    </div>
+                                ))}
+                                <div className={`overlay ${hoveredButton !== null ? 'visible' : ''}`} style={{
+                                    transformOrigin: hoveredButton !== null ? `${hoveredButton % 3 * 33.33 + 16.66}% ${Math.floor(hoveredButton / 3) * 33.33 + 16.66}%` : 'center center',
+                                }}>
+                                    {hoveredButton !== null && (
+                                        <div className="overlaymain">
+                                            <div className="heading">
+                                                {buttons[hoveredButton].name}
+                                            </div>
+                                            <div className="overlayContent">
+                                                {buttons[hoveredButton].content.split('\n').map((line, index) => (
+                                                    <div key={index}>{line}</div>
+                                                ))}
+                                            </div>
+                                        </div>
+                                    )}
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -50,7 +89,9 @@ function About() {
                 </div>
             </div>
         </div>
-    )
-}
+    );
+};
 
-export default About
+
+
+export default About;
