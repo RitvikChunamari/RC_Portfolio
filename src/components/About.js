@@ -17,7 +17,11 @@ const About = () => {
         { name: 'Problem Solving', content: 'Analyzing and resolving complex issues' },
         { name: 'Analytical', content: 'A Process of identifying and solving problems in many different contexts' }
     ];
-
+    const certificatebtn = [
+        { name: 'Cert1', content: 'Designing intuitive user interfaces and improving user experience' },
+        { name: 'cert2', content: 'Collaborative interface design tool for team projects' },
+        { name: 'cert3', content: ' A software application for image editing, graphic design, and digital art' },
+    ];
     const handleMouseEnter = (index) => {
         setHoveredButton(index);
     };
@@ -80,10 +84,12 @@ const About = () => {
                 <div className='box cert'>
                     <h2>Certifications</h2>
                     <div className="content">
-                        <div className='certgrid '>
-                            <Skillbtn btnName={"UX Design"} certclass={"certbtn"}></Skillbtn>
-                            <Skillbtn btnName={"Figma"} certclass={"certbtn"}></Skillbtn>
-                            <Skillbtn btnName={"Photoshop"} certclass={"certbtn"}></Skillbtn>
+                        <div className="certCont">
+                            <div className='certgrid '>
+                                <Skillbtn btnName={"UX Design"} certclass={"certbtn"}></Skillbtn>
+                                <Skillbtn btnName={"Figma"} certclass={"certbtn"}></Skillbtn>
+                                <Skillbtn btnName={"Photoshop"} certclass={"certbtn"}></Skillbtn>
+                            </div>
                         </div>
                     </div>
                 </div>

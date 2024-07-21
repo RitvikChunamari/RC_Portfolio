@@ -4,6 +4,7 @@ import Homecontent from './Homecontent'
 import Hoverpage from './Hoverpage'
 import '../styles/homepage.css'
 import About from './About'
+import Work from './Work'
 function Homepage() {
     useEffect(() => {
         const lightElement = document.querySelector('.light');
@@ -22,9 +23,10 @@ function Homepage() {
         }
     }, []);
     return (
+
         <div>
             <Navbar></Navbar>
-            <div className="homepage" style={{ position: 'relative', top: '5.6rem',  overflow: 'hidden' }}>
+            <div className="homepage" style={{ position: 'relative', top: '5.6rem', overflow: 'hidden' }}>
                 <Homecontent></Homecontent>
                 <div>
                     <h1 className='hint'>Hint: move your cursor</h1>
@@ -33,8 +35,10 @@ function Homepage() {
                     </div>
                 </div>
                 <About></About>
+                <Work></Work>
             </div>
         </div>
+
     )
 }
 
