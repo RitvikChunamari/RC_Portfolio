@@ -31,7 +31,7 @@ const About = () => {
     };
 
     return (
-        <div className='container'>
+        <div className='container' id='about'>
             <div className='box about'>
                 <h2>About</h2>
                 <div className="content abt ">

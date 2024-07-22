@@ -2,9 +2,10 @@ import React, { useEffect } from 'react'
 import Navbar from './Navbar'
 import Homecontent from './Homecontent'
 import Hoverpage from './Hoverpage'
-import '../styles/homepage.css'
 import About from './About'
 import Work from './Work'
+import '../styles/homepage.css'
+import Contact from './Contact'
 function Homepage() {
     useEffect(() => {
         const lightElement = document.querySelector('.light');
@@ -23,22 +24,18 @@ function Homepage() {
         }
     }, []);
     return (
-
         <div>
-            <Navbar></Navbar>
-            <div className="homepage" style={{ position: 'relative', top: '5.6rem', overflow: 'hidden' }}>
-                <Homecontent></Homecontent>
-                <div>
-                    <h1 className='hint'>Hint: move your cursor</h1>
-                    <div className="light">
-                        <Hoverpage></Hoverpage>
-                    </div>
+            <Homecontent></Homecontent>
+            <div>
+                <h1 className='hint'>Hint: move your cursor</h1>
+                <div className="light">
+                    <Hoverpage></Hoverpage>
                 </div>
-                <About></About>
-                <Work></Work>
             </div>
+            <About></About>
+            <Work></Work>
+            <Contact></Contact>
         </div>
-
     )
 }
 
