@@ -1,0 +1,87 @@
+@keyframes moveIcon {
+  0% {
+    transform: translateX(-8px);
+  }
+  50% {
+    transform: translateX(-2px);
+  }
+  100% {
+    transform: translateX(-8px);
+  }
+}
+
+.landingContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 50px;
+  background-color: black;
+}
+.landing {
+  display: grid;
+  grid-template-columns: repeat(2, 629px);
+  grid-template-rows: repeat(9, 100px);
+  gap: 1.5em;
+}
+.secLandingItem {
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 60px;
+}
+.summary {
+  grid-column: 1 / 1;
+  grid-row: 1 /5;
+  background-color: white;
+  font-size: 2em;
+}
+
+.summaryContent {
+  grid-column: 2 / 2;
+  grid-row: 1 /5;
+  border: 2px solid white;
+  color: white;
+  font-size: 1.5em;
+}
+.obj {
+  grid-column: 2 / 2;
+  grid-row: 5/ 9;
+  background-color: white;
+  font-size: 2em;
+
+}
+.objContent {
+  grid-column: 1/ 1;
+  grid-row: 5/ 9;
+  border: 2px solid white;
+  font-size: 1.5em;
+  color: white;
+}
+.landButton {
+  font-weight: bold;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 60px;
+  padding: 10px 10px;
+  font-size: 1.5em;
+  width: 100%;
+  cursor: pointer;
+  height: 50px;
+}
+.landButton svg {
+  fill: black;
+  stroke: black;
+  stroke-width: 1;
+  height: 50px;
+  width: 45px;
+  margin-left: 25px;
+  margin-top: 5px;
+  animation: moveIcon 2s infinite;
+}
+.obj svg {
+  margin-right: 25px;
+  margin-left: 0;
+}

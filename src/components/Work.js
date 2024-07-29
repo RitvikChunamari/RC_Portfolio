@@ -15,7 +15,7 @@ function Work() {
                     <div className="btncont">
                         <div className='button'>
                             <span>Explore</span>
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 25 25"><path d="M18 12.5 7.707 23 7 22.293l9.586-9.793L7 2.707 7.707 2 18 12.5z" /></svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 25 25"><path d="m17.5 5.999-.707.707 5.293 5.293H1v1h21.086l-5.294 5.295.707.707L24 12.499l-6.5-6.5z" data-name="Right" /></svg>
                         </div>
                     </div>
                 </div>
@@ -26,7 +26,7 @@ function Work() {
                     <div className="btncont">
                         <div className='button'>
                             <span>Explore</span>
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 25 25"><path d="M18 12.5 7.707 23 7 22.293l9.586-9.793L7 2.707 7.707 2 18 12.5z" /></svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 25 25"><path d="m17.5 5.999-.707.707 5.293 5.293H1v1h21.086l-5.294 5.295.707.707L24 12.499l-6.5-6.5z" data-name="Right" /></svg>
                         </div>
                     </div>
                 </div>

@@ -2,13 +2,14 @@
   background-color: black;
   color: white;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
 }
 .contactGrid {
   display: grid;
   grid-template-columns: repeat(2, 629px);
-  grid-template-rows: repeat(1, 500px);
+  grid-template-rows: repeat(1, 600px);
   gap: 1em;
 }
 .contactGridItem {
@@ -17,9 +18,9 @@
   border-radius: 20px;
 }
 .contactContent {
-  font-size: 3.5em;
+  font-size: 2.6em;
   font-weight: 500;
-  padding: 20px;
+  padding: 0 50px;
 }
 .cg1 {
   grid-column: 1/1;
@@ -34,6 +35,72 @@
   justify-content: center;
 }
 .cg2 {
+  background-color: rgb(0, 0, 0);
   grid-column: 2/2;
   grid-row: 1/1;
+  background-color: rgb(255, 255, 255);
+  color: black;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+  gap: 1.5em;
+  padding: 20px 10px;
+}
+.formGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(8, 50px);
+  row-gap: 0.9em;
+  column-gap: 1em;
+  width: 100%;
+}
+.touchGridItem {
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.fname {
+  grid-column: 1/2;
+  grid-row: 1/1;
+  width: 100%;
+}
+.lname {
+  grid-column: 2/2;
+  grid-row: 1/1;
+  width: 100%;
+}
+.email {
+  grid-column: 1/3;
+}
+.phone {
+  grid-column: 1/3;
+}
+.message {
+  grid-column: 1/3;
+  grid-row: 4/8;
+}
+.submit {
+  grid-column: 1/3;
+  grid-row: 8/8;
+}
+input,
+textarea,
+button {
+  width: 100%;
+  height: 100%;
+  text-decoration: none;
+  background-color: black;
+  border: none;
+  color: white;
+  font-size: 1.2em;
+  outline: none;
+  border-radius: 20px;
+  padding: 15px;
+  color: white;
+}
+::placeholder {
+  color: #ffffff;
+  opacity: 1;
 }

@@ -1,0 +1,105 @@
+.personacontainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: black;
+}
+.personaGrid {
+  display: grid;
+  grid-template-columns: repeat(31, 1fr);
+  grid-template-rows: repeat(13, 1fr);
+  gap: 1em;
+  width: 1280px;
+}
+.personaGridItem {
+  border-radius: 20px;
+}
+.personaGridItem .head {
+  padding: 5px 15px;
+}
+.personaGridItem ul {
+  padding: 1px 45px;
+}
+.head {
+  display: flex;
+  align-items: center;
+ 
+}
+.head h1 {
+  padding-left: 10px;
+}
+
+.ng {
+  grid-column: 1/11;
+  grid-row: 1/13;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-row: repeat(6, 1fr);
+  gap: 1em;
+}
+img {
+  width: 60%;
+  height: 70%;
+}
+.pfp {
+  grid-column: 1/5;
+  grid-row: 1/1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.dmg {
+  grid-column: 1/5;
+  grid-row: 2/3;
+  background-color: #ffffff;
+  border-radius: 20px;
+  padding: 5px 10px;
+}
+.tech {
+  grid-column: 1/5;
+  grid-row: 4/5;
+  background-color: #ffffff;
+  border-radius: 20px;
+  padding: 5px 10px;
+}
+.dmg h2 {
+  padding: 5px;
+}
+.upr1 {
+  grid-column: 11/32;
+  grid-row: 1/4;
+  background-color: #ffffff;
+}
+.upr2 {
+  grid-column: 11/32;
+  grid-row: 4/7;
+
+  background-color: #ffffff;
+}
+.upr3 {
+  grid-column: 11/32;
+  grid-row: 7/10;
+  background-color: #ffffff;
+}
+.upr4 {
+  grid-column: 11/32;
+  grid-row: 10/13;
+  background-color: #ffffff;
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 18px;
+  text-align: left;
+}
+th,
+td {
+  padding: 5px;
+}
+th {
+  width: 45%;
+}
+td {
+  width: 60%;
+}

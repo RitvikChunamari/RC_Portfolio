@@ -1,11 +1,14 @@
 import React, { useEffect } from 'react'
-import Navbar from './Navbar'
+// import Navbar from './Navbar'
 import Homecontent from './Homecontent'
 import Hoverpage from './Hoverpage'
 import About from './About'
 import Work from './Work'
 import '../styles/homepage.css'
 import Contact from './Contact'
+import Shader from './Shader'
+import Landing from './Explore/Landing'
+import Userpersonas from './Explore/Userpersonas'
 function Homepage() {
     useEffect(() => {
         const lightElement = document.querySelector('.light');
@@ -35,6 +38,8 @@ function Homepage() {
             <About></About>
             <Work></Work>
             <Contact></Contact>
+            <Landing></Landing>
+            <Userpersonas></Userpersonas>
         </div>
     )
 }

@@ -71,7 +71,7 @@
   cursor: pointer;
   height: 50px;
 }
-svg {
+.button svg {
   fill: black;
   stroke: black;
   stroke-width: 2;
