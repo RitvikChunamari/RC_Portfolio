@@ -2,6 +2,7 @@ import React from 'react'
 import '../../styles/Explore/userpersonas.css'
 import lady from "../../images/lady.png"
 import man from "../../images/man.png"
+import flowchart from "../../images/flochart.png"
 function Userpersonas() {
     return (
         <div className="personacontainer">
@@ -180,6 +181,9 @@ function Userpersonas() {
                         <li>Often makes decisions based on thorough research and recommendations.</li>
                     </ul>
                 </div>
+            </div>
+            <div className="flowchart">
+                <img src={flowchart} />
             </div>
         </div>
 

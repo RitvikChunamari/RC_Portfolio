@@ -9,7 +9,7 @@ function Homecontent() {
                 <div className='designation'>Cerebral Palsy <strong >&middot;</strong> Creative Designer <strong>&middot;</strong> Options Trader <strong >&middot;</strong> Tech Enthusiast  </div>
             </div>
             <div className="memoji">
-                <img src={memoji} alt="memoji" />
+                {/* <img src={memoji} alt="memoji" /> */}
             </div>
         </div>
     )

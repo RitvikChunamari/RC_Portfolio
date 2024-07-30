@@ -24,7 +24,6 @@
 .head {
   display: flex;
   align-items: center;
- 
 }
 .head h1 {
   padding-left: 10px;
@@ -102,4 +101,15 @@ th {
 }
 td {
   width: 60%;
+}
+.flowchart {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+@media all and (min-width: 375px) and (max-width: 500px) {
+  .flowchart img{
+    width: calc(100% - 1em);
+    height: 100%;
+  }
 }

@@ -35,7 +35,9 @@ const About = () => {
             <div className='box about'>
                 <h2>About</h2>
                 <div className="content abt ">
-                    I'm <span><strong>Ritvik Chunamari</strong></span>, a Hubli, India-based Computer Science Engineer driven by a passion for UX design. Despite having Cerebral Palsy disability, I've embraced challenges and developed my skills in various design disciplines such as UX Design, Figma, Photoshop, Video Editing  to bring fresh perspectives and innovative solutions to the table.
+                    <p>
+                        I'm <span><strong>Ritvik Chunamari</strong></span>, a Hubli, India-based Computer Science Engineer driven by a passion for UX design. Despite having Cerebral Palsy disability, I've embraced challenges and developed my skills in various design disciplines such as UX Design, Figma, Photoshop, Video Editing  to bring fresh perspectives and innovative solutions to the table.
+                    </p>
                 </div>
             </div>
             <div className="col2">
