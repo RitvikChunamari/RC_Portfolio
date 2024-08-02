@@ -41,22 +41,22 @@ function Contact() {
                     <h1>Get In Touch</h1>
                     <div className="formGrid">
                         <div className="touchGridItem fname">
-                            <input type="text" placeholder='First Name' />
+                            <input type="text" name="text" class="input" placeholder="First Name" />
                         </div>
                         <div className="touchGridItem lname">
-                            <input type="text" placeholder='Last Name' />
+                            <input type="text" name="text" class="input" placeholder="Last Name" />
                         </div>
                         <div className="touchGridItem email">
-                            <input type="email" placeholder='Email' />
+                            <input type="email" name="text" class="input" placeholder='Email' />
                         </div>
                         <div className="touchGridItem phone">
-                            <input type="number" placeholder='Phone' />
+                            <input type="number" name="text" class="input" placeholder='Phone' />
                         </div>
                         <div className="touchGridItem message">
-                            <textarea name="" id="" cols="30" rows="5" placeholder='Message'></textarea>
+                            <textarea name="text" id="" cols="30" rows="5" class="input" placeholder='Message'></textarea>
                         </div>
                         <div className="touchGridItem submit">
-                            <button type='submit'>Submit</button>
+                            <button class="btn-12"><span>Submit</span></button>
                         </div>
                     </div>
                 </div>

@@ -43,13 +43,13 @@ const About = () => {
             <div className="col2">
                 <div className='box skills'>
                     <h2>Skills</h2>
-                    <div className="carouselCont">
+                    {/* <div className="carouselCont">
                         <div className="skillcarousel">
                             <Skillbtn btnName={"UX Design"} className={"grid-item"}></Skillbtn>
                             <Skillbtn btnName={"Figma"} className={"grid-item"}></Skillbtn>
                             <Skillbtn btnName={"Figma"} className={"grid-item"}></Skillbtn>
                         </div>
-                    </div>
+                    </div> */}
                     <div className="content">
                         <div className="skillCont">
                             <div className="grid">

@@ -19,15 +19,24 @@ function Homepage() {
                 document.documentElement.style.setProperty('--y', e.clientY + 'px');
             };
 
+            const handleTouchMove = (e) => {
+                const touch = e.touches[0];
+                document.documentElement.style.setProperty('--x', touch.clientX + 'px');
+                document.documentElement.style.setProperty('--y', touch.clientY + 'px');
+            };
+
             lightElement.addEventListener('mousemove', handleMouseMove);
+            lightElement.addEventListener('touchmove', handleTouchMove);
 
             return () => {
                 lightElement.removeEventListener('mousemove', handleMouseMove);
+                lightElement.removeEventListener('touchmove', handleTouchMove);
             };
         }
     }, []);
     return (
         <div>
+            <Shader></Shader>
             <Homecontent></Homecontent>
             <div>
                 <h1 className='hint'>Hint: move your cursor</h1>

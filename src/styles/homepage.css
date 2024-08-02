@@ -26,3 +26,36 @@
   font-weight: 100;
   font-size: 1.5em;
 }
+
+@media all and (max-width: 375px) {
+  .light::after {
+    background: none;
+  }
+  .hint {
+    display: none;
+  }
+}
+@media all and (min-width: 376px) and (max-width: 500px) {
+  .light::after {
+    background: none;
+  }
+  .hint {
+    display: none;
+  }
+}
+@media all and (min-width: 501px) and (max-width: 768px) {
+  .light::after {
+    background: none;
+  }
+  .hint {
+    display: none;
+  }
+}
+@media all and (min-width: 768px) and (max-width: 1300px) {
+  .light::after {
+    background: none;
+  }
+  .hint {
+    display: none;
+  }
+}
