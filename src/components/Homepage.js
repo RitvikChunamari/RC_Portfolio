@@ -36,19 +36,19 @@ function Homepage() {
     }, []);
     return (
         <div>
-            <Shader></Shader>
+            {/* <Shader></Shader> */}
             <Homecontent></Homecontent>
-            <div>
+            {/* <div>
                 <h1 className='hint'>Hint: move your cursor</h1>
                 <div className="light">
                     <Hoverpage></Hoverpage>
                 </div>
-            </div>
+            </div> */}
             <About></About>
-            <Work></Work>
+            {/* <Work></Work>
             <Contact></Contact>
-            <Landing></Landing>
-            <Userpersonas></Userpersonas>
+            <Landing></Landing> */}
+            {/* <Userpersonas></Userpersonas> */}
         </div>
     )
 }
