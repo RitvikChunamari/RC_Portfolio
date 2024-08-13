@@ -11,7 +11,7 @@ function Homecontent() {
                         <h1 className='space'>'</h1>
                         <h1>Chunamari</h1>
                     </div>
-                    <div className='designation'>Cerebral Palsy <strong >&middot;</strong> Creative Designer <strong>&middot;</strong> Options Trader <strong >&middot;</strong> Tech Enthusiast  </div>
+                    <div className='designation'>Cerebral Palsy <strong >&middot;</strong> Creative Designer <strong>&middot;</strong> Problem Solver <strong >&middot;</strong> Tech Enthusiast  </div>
                 </div>
                 <div className="memoji">
                     <img src={memoji} alt="" />

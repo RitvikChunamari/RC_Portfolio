@@ -9,6 +9,7 @@ import Contact from './Contact'
 import Shader from './Shader'
 import Landing from './Explore/Landing'
 import Userpersonas from './Explore/Userpersonas'
+import WobbleCard from './WobbleCard'
 function Homepage() {
     useEffect(() => {
         const lightElement = document.querySelector('.light');
@@ -36,18 +37,21 @@ function Homepage() {
     }, []);
     return (
         <div>
-            {/* <Shader></Shader> */}
-            <Homecontent></Homecontent>
+            {/* <Homecontent></Homecontent> */}
             {/* <div>
                 <h1 className='hint'>Hint: move your cursor</h1>
                 <div className="light">
                     <Hoverpage></Hoverpage>
                 </div>
             </div> */}
-            <About></About>
-            {/* <Work></Work>
+            {/* <About></About>
+            <Work></Work>
             <Contact></Contact>
             <Landing></Landing> */}
+            <WobbleCard>
+                <h1>Your Content Here</h1>
+                <p>This will be displayed inside the wobble card.</p>
+            </WobbleCard>
             {/* <Userpersonas></Userpersonas> */}
         </div>
     )

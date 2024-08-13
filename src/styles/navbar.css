@@ -130,7 +130,7 @@ nav .logo {
 
   nav .logo {
     justify-content: flex-start;
-    margin: 0;
+    margin-left: 40px;
   }
 
   .open-sidebar-button,
