@@ -1,5 +1,5 @@
 import React from 'react'
-import memoji from '../images/memoji.png'
+// import memoji from '../images/memoji.png'
 import '../styles/homecontent.css'
 function Homecontent() {
     return (

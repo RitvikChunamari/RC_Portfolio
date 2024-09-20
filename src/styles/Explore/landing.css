@@ -15,7 +15,7 @@
   justify-content: center;
   align-items: center;
   padding: 50px;
-  background-color: black;
+  /* background-color: black; */
 }
 .landing {
   display: grid;

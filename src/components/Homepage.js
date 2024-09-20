@@ -38,12 +38,12 @@ function Homepage() {
         <div>
             <Shader></Shader>
             <Homecontent></Homecontent>
-            <div>
+            {/* <div>
                 <h1 className='hint'>Hint: move your cursor</h1>
                 <div className="light">
                     <Hoverpage></Hoverpage>
                 </div>
-            </div>
+            </div> */}
             <About></About>
             <Work></Work>
             <Contact></Contact>
