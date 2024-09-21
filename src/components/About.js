@@ -34,7 +34,7 @@ const About = () => {
         <div className="maincont">
             <div className='container' id='about'>
                 <div className='box about'>
-                    <h2>About</h2>
+                    <p className='abt_heading'>About</p>
                     <div className="content abt">
                         <p>
                             I'm <span><strong>Ritvik Chunamari</strong></span>, a Hubli, India-based Computer Science Engineer driven by a passion for UX design. Despite having Cerebral Palsy disability, I've embraced challenges and developed my skills in various design disciplines such as UX Design, Figma, Photoshop, Video Editing  to bring fresh perspectives and innovative solutions to the table.
@@ -50,7 +50,7 @@ const About = () => {
                     </div> */}
                 <div className="col2">
                     <div className='box skills'>
-                        <h2>Skills</h2>
+                        <p className='abt_heading'>Skills</p>
 
                         <div className="skillCont">
                             <div className="grid">
@@ -84,7 +84,7 @@ const About = () => {
                         </div>
                     </div>
                     <div className='box cert'>
-                        <h2>Certifications</h2>
+                        <p className='abt_heading'>Certifications</p>
 
                         <div className="certCont">
                             <div className='certgrid '>

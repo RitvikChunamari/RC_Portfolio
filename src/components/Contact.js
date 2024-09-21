@@ -30,7 +30,7 @@ function Contact() {
     return (
         <div ref={container} className='contactCont' id='contact'>
             <div className="contact_heading">
-                <h1>Contact</h1>
+                <p>Contact</p>
             </div>
             <div className="contactGrid">
                 <div ref={box} className='contactGridItem cg1'>
@@ -38,7 +38,7 @@ function Contact() {
                 </div>
 
                 <div className='contactGridItem cg2'>
-                    <h1>Get In Touch</h1>
+                    <h2>Get In Touch</h2>
                     <div className="formGrid">
                         <div className="touchGridItem fname">
                             <input type="text" name="text" class="input" placeholder="First Name" />

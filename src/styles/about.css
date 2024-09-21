@@ -263,7 +263,7 @@
 
 /* General styles */
 .container {
-  border: 1px solid rgb(27, 194, 209);
+  /* border: 1px solid rgb(27, 194, 209); */
   color: white;
   max-width: 1650px;
   margin: 0 auto;
@@ -273,7 +273,7 @@
   gap: 1em;
 }
 .maincont {
-  border: 1px solid red;
+  /* border: 1px solid red; */
   min-height: 100vh;
   display: flex;
   align-items: center;
@@ -292,12 +292,16 @@ h2 {
 
 /* About section */
 .content {
-  font-size: clamp(1em, 2.3vw, 1.49em);
+  font-size: clamp(14px, 5vw, 22px);
   line-height: 1.6;
 }
 .abt {
   position: relative;
   top: 12%;
+}
+.abt_heading {
+  font-size: clamp(24px, 5vw, 28px);
+  font-weight: 700;
 }
 .about {
   background: rgba(0, 0, 0, 0.4);

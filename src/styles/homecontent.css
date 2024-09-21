@@ -149,7 +149,7 @@
 /* Experiment */
 
 .homecontent {
-  border: 1px solid red;
+  /* border: 1px solid red; */
   color: white;
   min-height: calc(100svh - 5.6em);
   display: flex;

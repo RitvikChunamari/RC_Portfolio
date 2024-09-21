@@ -6,13 +6,13 @@
   justify-content: center;
   padding: 2em;
   margin: 0 auto;
-  border: 2px solid purple;
+  /* border: 2px solid purple; */
   min-height: 100vh;
 }
 
 .heading h1 {
-  font-size: clamp(1.5em, 5vw, 2.5em);
-  margin-bottom: 1em;
+  font-size: clamp(24px, 5vw, 48px);
+  margin-bottom: 5em;
 }
 
 .contactGrid {
@@ -21,6 +21,7 @@
   gap: 1em;
   width: 100%;
   max-width: 1300px;
+  padding-top: 20px;
 }
 
 .contactGridItem {
@@ -29,7 +30,7 @@
 }
 
 .contactContent {
-  font-size: clamp(1.5em, 3vw, 2.6em);
+  font-size: clamp(24px, 3vw, 32px );
   font-weight: 500;
   padding: 1em;
 }
@@ -46,7 +47,8 @@
 }
 
 .contact_heading {
-  font-size: 28px;
+  font-size: clamp(24px, 5vw, 48px);
+  font-weight: 700;
 }
 
 .cg2 {

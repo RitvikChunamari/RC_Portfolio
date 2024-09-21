@@ -4,8 +4,8 @@ import secimg from '../images/security_image.png'
 function Work() {
     return (
         <div className='workContainer' id='work'>
-            <div className="heading">
-                <h2>Work</h2>
+            <div className="work_heading">
+                <p>Work</p>
             </div>
             <div className="workgrid">
                 <div className='work-grid-item g2'>

@@ -1,6 +1,10 @@
 nav {
   height: 90px;
-  /* background-color: #000000; */
+  background-color: rgba(0, 0, 0, 0.9);
+  box-shadow: 0 1px 20px rgba(0, 0, 0, 0.7);
+
+  /* backdrop-filter: blur(5px); */
+  /* -webkit-backdrop-filter: blur(5px); */
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
@@ -130,7 +134,7 @@ nav .logo {
 
   nav .logo {
     justify-content: flex-start;
-    margin: 0;
+    margin-left: 20px;
   }
 
   .open-sidebar-button,
