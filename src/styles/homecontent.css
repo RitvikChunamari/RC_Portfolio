@@ -9,9 +9,12 @@
     background-position: 100% 0;
   }
 }
-.homeGrid {
+.space {
+  visibility: collapse;
+}
+/* .homeGrid {
   overflow: hidden;
-  /* background-color: #000000; */
+  background-color: #000000;
   font-size: 1em;
   display: flex;
   align-items: center;
@@ -47,9 +50,9 @@
   background-clip: text;
   color: transparent;
   animation: gradientMove 3s linear infinite;
-}
+} */
 
-@media all and (max-width: 375px) {
+/* @media all and (max-width: 375px) {
   .homeGrid {
     flex-direction: column-reverse;
     justify-content: flex-end;
@@ -70,8 +73,8 @@
     width: 15em;
     height: 15em;
   }
-}
-@media all and (min-width: 376px) and (max-width: 500px) {
+} */
+/* @media all and (min-width: 376px) and (max-width: 500px) {
   .homeGrid {
     flex-direction: column-reverse;
     justify-content: flex-end;
@@ -140,5 +143,72 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
+  }
+} */
+
+/* Experiment */
+
+.homecontent {
+  border: 1px solid red;
+  color: white;
+  min-height: calc(100svh - 5.6em);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.homeGrid {
+  /* margin: 0 auto; */
+  max-width: 1300px;
+  
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.nameDesig {
+  width: 100%;
+}
+.name {
+  display: flex;
+  vertical-align: top;
+  font-size: clamp(1rem, 3vw, 3rem);
+  line-height: 3em;
+}
+.designation {
+  font-size: clamp(1rem, 1vw, 1.64rem);
+}
+.memoji {
+  min-width: 16em;
+  min-height: 16em;
+  margin: 0 auto;
+}
+.memoji img {
+  width: 100%;
+  height: 100%;
+}
+@media all and (max-width: 1025px) {
+  .homeGrid {
+    flex-direction: column-reverse;
+    width: 95%;
+    align-items: flex-start;
+  }
+  .nameDesig {
+    margin: 0 auto;
+  }
+  .name {
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    font-size: clamp(100%, 60%);
+    line-height: 1;
+    padding-bottom: 1em;
+  }
+
+  .designation {
+    text-align: center;
+    font-size: clamp(100%, 60%);
+  }
+  .memoji {
+    max-width: 40%;
   }
 }

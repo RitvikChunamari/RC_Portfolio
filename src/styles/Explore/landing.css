@@ -1,12 +1,10 @@
 @keyframes moveIcon {
-  0% {
+  0%,
+  100% {
     transform: translateX(-8px);
   }
   50% {
     transform: translateX(-2px);
-  }
-  100% {
-    transform: translateX(-8px);
   }
 }
 
@@ -14,74 +12,126 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 50px;
+  padding: clamp(20px, 5vw, 50px);
   /* background-color: black; */
+  min-height: 100vh;
+  border: 1px solid red;
 }
+
 .landing {
+  max-width: 1300px;
   display: grid;
-  grid-template-columns: repeat(2, 629px);
-  grid-template-rows: repeat(9, 100px);
+  grid-template-columns: repeat(2, minmax(300px, 1fr));
   gap: 1.5em;
+  width: 100%;
 }
+
 .secLandingItem {
   border-radius: 20px;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 60px;
-}
-.summary {
-  grid-column: 1 / 1;
-  grid-row: 1 /5;
-  background-color: white;
-  font-size: 2em;
+  padding: clamp(20px, 4vw, 60px);
+  min-height: 200px;
 }
 
-.summaryContent {
-  grid-column: 2 / 2;
-  grid-row: 1 /5;
-  border: 2px solid white;
-  color: white;
-  font-size: 1.5em;
-}
+.summary,
 .obj {
-  grid-column: 2 / 2;
-  grid-row: 5/ 9;
   background-color: white;
-  font-size: 2em;
+  font-size: clamp(1.5em, 3vw, 2em);
+}
 
-}
+.summaryContent,
 .objContent {
-  grid-column: 1/ 1;
-  grid-row: 5/ 9;
   border: 2px solid white;
-  font-size: 1.5em;
   color: white;
+  font-size: clamp(1em, 2vw, 1.5em);
 }
+
+.objContent ul {
+  padding-left: 20px;
+}
+
+.objContent li {
+  margin-bottom: 10px;
+}
+
 .landButton {
   font-weight: bold;
-
   display: flex;
   align-items: center;
   justify-content: center;
   border-radius: 60px;
-  padding: 10px 10px;
-  font-size: 1.5em;
+  padding: 10px;
+  font-size: clamp(1em, 2vw, 1.5em);
   width: 100%;
   cursor: pointer;
   height: 50px;
+  white-space: nowrap;
 }
+
 .landButton svg {
   fill: black;
   stroke: black;
   stroke-width: 1;
-  height: 50px;
-  width: 45px;
-  margin-left: 25px;
-  margin-top: 5px;
+  height: 30px;
+  width: 30px;
+  margin-left: 15px;
   animation: moveIcon 2s infinite;
 }
+
 .obj svg {
-  margin-right: 25px;
+  margin-right: 15px;
   margin-left: 0;
+}
+
+@media (max-width: 768px) {
+  .landing {
+    grid-template-columns: 1fr;
+  }
+
+  .secLandingItem {
+    min-height: 150px;
+  }
+
+  .summary {
+    order: 1;
+  }
+
+  .summaryContent {
+    order: 2;
+  }
+
+  .obj {
+    order: 3;
+  }
+
+  .objContent {
+    order: 4;
+  }
+}
+
+@media (max-width: 480px) {
+  .landingContainer {
+    padding: 10px;
+  }
+
+  .secLandingItem {
+    padding: 15px;
+  }
+
+  .landButton {
+    font-size: 1em;
+    height: 40px;
+  }
+
+  .landButton svg {
+    height: 20px;
+    width: 20px;
+    margin-left: 10px;
+  }
+
+  .obj svg {
+    margin-right: 10px;
+  }
 }

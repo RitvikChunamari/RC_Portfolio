@@ -1,16 +1,19 @@
 import React from 'react'
 import '../styles/work.css'
+import secimg from '../images/security_image.png'
 function Work() {
     return (
         <div className='workContainer' id='work'>
             <div className="heading">
-                <h1>Work</h1>
+                <h2>Work</h2>
             </div>
             <div className="workgrid">
-                <div className='work-grid-item g1'></div>
                 <div className='work-grid-item g2'>
                     <div>
                         <p className='work-heading'>Security Agency Landing Page</p>
+                    </div>
+                    <div className="imgcontent">
+                        <img src={secimg} alt="security_image" />
                     </div>
                     <div className="btncont">
                         <div className='button'>
@@ -23,6 +26,9 @@ function Work() {
                     <div>
                         <p className='work-heading'>Security Agency Admin Dashboard</p>
                     </div>
+                    <div className="imgcontent">
+                        <img src={secimg} alt="security_image" />
+                    </div>
                     <div className="btncont">
                         <div className='button'>
                             <span>Explore</span>
@@ -30,7 +36,6 @@ function Work() {
                         </div>
                     </div>
                 </div>
-                <div className='work-grid-item g4'></div>
             </div>
         </div >
     )

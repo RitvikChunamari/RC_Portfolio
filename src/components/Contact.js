@@ -29,7 +29,7 @@ function Contact() {
     }, [])
     return (
         <div ref={container} className='contactCont' id='contact'>
-            <div className="heading">
+            <div className="contact_heading">
                 <h1>Contact</h1>
             </div>
             <div className="contactGrid">
