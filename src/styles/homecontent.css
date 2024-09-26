@@ -159,7 +159,6 @@
 .homeGrid {
   /* margin: 0 auto; */
   max-width: 1300px;
-  
   display: flex;
   align-items: center;
   justify-content: center;
@@ -172,9 +171,18 @@
   vertical-align: top;
   font-size: clamp(1rem, 3vw, 3rem);
   line-height: 3em;
+  background: linear-gradient(to right, #8fb1f5, #0f5fff, #023db2);
+  background-size: 200% 200%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+  animation: gradientMove 3s linear infinite;
 }
+
 .designation {
   font-size: clamp(1rem, 1vw, 1.64rem);
+  padding-left: 7px;
 }
 .memoji {
   min-width: 16em;

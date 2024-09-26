@@ -85,7 +85,6 @@ const About = () => {
                     </div>
                     <div className='box cert'>
                         <p className='abt_heading'>Certifications</p>
-
                         <div className="certCont">
                             <div className='certgrid '>
                                 <Skillbtn btnName={"UX Design"} certclass={"certbtn"}></Skillbtn>

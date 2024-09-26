@@ -26,7 +26,7 @@ function Navbar() {
                         spy={true}
                         smooth={true}
                         delay={0}
-                        offset={-100}
+                        offset={-300}
                         duration={50}
                         className='fancy'>
                         Home
@@ -43,7 +43,7 @@ function Navbar() {
                     <Link to="about"
                         spy={true}
                         smooth={true}
-                        offset={15}
+                        offset={-200}
                         delay={0}
                         duration={50}
                         className='fancy'>
@@ -52,7 +52,7 @@ function Navbar() {
                     <Link to="work"
                         spy={true}
                         smooth={true}
-                        offset={30}
+                        offset={-50}
                         delay={0}
                         duration={50}
                         className='fancy'>
@@ -61,6 +61,7 @@ function Navbar() {
                     <Link to="contact"
                         spy={true}
                         smooth={true}
+                        offset={-10}
                         delay={0}
                         duration={50}
                         className='fancy'>

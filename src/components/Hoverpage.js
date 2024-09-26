@@ -5,7 +5,6 @@ function Hoverpage() {
         <div className='main' id='hover'>
             <div className="hover">
                 <h1 >Think. Design. Create </h1>
-                
             </div>
         </div>
     )
