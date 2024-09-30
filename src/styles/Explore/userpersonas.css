@@ -4,11 +4,10 @@
   align-items: center;
   justify-content: center;
   margin: 0 auto;
-  gap: 2em;
+  gap: 4em;
   min-height: 100vh;
   padding: 2em;
   position: relative;
-  max-width: 1300px;
   width: 100%;
   color: white;
 }
@@ -16,8 +15,15 @@
 .personaGrid {
   display: grid;
   grid-template-columns: minmax(400px, auto) 1fr;
+  max-width: 1300px;
   gap: 1em;
   width: 100%;
+}
+
+.user_persona_heading {
+  color: white;
+  font-weight: 700;
+  font-size: clamp(24px, 5vw, 48px);
 }
 
 .personaGridItem {

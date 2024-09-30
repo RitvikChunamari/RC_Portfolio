@@ -1,5 +1,5 @@
-.container {
-  /* background-color: black; */
+/* .container {
+  background-color: black;
   color: white;
   display: flex;
   justify-content: center;
@@ -270,11 +270,13 @@
   padding: 20px;
   gap: 1em;
 }
+
 .maincont {
   min-height: 100vh;
   display: flex;
   align-items: center;
 }
+
 .box {
   border-radius: 8px;
   padding: 20px;
@@ -291,14 +293,17 @@ h2 {
   font-size: clamp(14px, 5vw, 22px);
   line-height: 1.6;
 }
+
 .abt {
   position: relative;
   top: 12%;
 }
+
 .abt_heading {
   font-size: clamp(24px, 5vw, 28px);
   font-weight: 700;
 }
+
 .about {
   background: rgba(0, 0, 0, 0.4);
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
@@ -316,12 +321,15 @@ h2 {
 .col2 {
   gap: 20px;
 }
+
 .skills {
   height: 60%;
 }
+
 .cert {
   height: 33%;
 }
+
 .skills,
 .cert {
   max-width: 100%;
@@ -361,7 +369,7 @@ h2 {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.6);
   backdrop-filter: blur(5px);
   -webkit-backdrop-filter: blur(5px);
   box-shadow: 0 0 0 3px #00000020;
@@ -391,6 +399,13 @@ h2 {
 .overlayContent {
   font-size: 1rem;
 }
+
+.skillbtn {
+  background-color: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(5px);
+}
+
 .skillbtn:hover {
   background-color: rgba(45, 45, 45, 0.1);
   backdrop-filter: blur(12px);
@@ -404,12 +419,73 @@ h2 {
   bottom: -10px;
 }
 
+.box {
+  position: relative;
+  overflow: hidden;
+}
+
+.torch-container {
+  position: absolute;
+  top: -50px;
+  left: -50px;
+  right: -50px;
+  bottom: -50px;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.torch {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  background: radial-gradient(circle, rgba(36, 36, 36, 0.03) 50%, rgba(36, 36, 36, 0) 30%);
+  opacity: 0;
+  transition: opacity 0.1s ease;
+}
+
+.border-highlight {
+  position: absolute;
+  pointer-events: none;
+  transition: opacity 0.1s ease, background 0.1s ease;
+}
+
+.border-highlight-top,
+.border-highlight-bottom {
+  height: 2px;
+  width: 100%;
+  left: 0;
+}
+
+.border-highlight-left,
+.border-highlight-right {
+  width: 2px;
+  height: 100%;
+  top: 0;
+}
+
+.border-highlight-top {
+  top: 0;
+}
+
+.border-highlight-bottom {
+  bottom: 0;
+}
+
+.border-highlight-left {
+  left: 0;
+}
+
+.border-highlight-right {
+  right: 0;
+}
+
 @media (max-width: 1100px) {
   .container {
     max-width: 100%;
     display: block;
     position: relative;
   }
+
   .about {
     max-width: 100%;
     height: 50%;
@@ -418,6 +494,7 @@ h2 {
   .content {
     font-size: clamp(1.25em, 2.3vw, 1.49em);
   }
+
   .col2 {
     flex-direction: column;
   }
@@ -429,13 +506,16 @@ h2 {
 }
 
 @media (max-width: 480px) {
+
   .grid,
   .certgrid {
     grid-template-columns: 1fr;
   }
+
   .container {
     display: block;
   }
+
   .about {
     max-width: 100%;
   }

@@ -21,7 +21,7 @@ const initialFormState = {
 
 const reducer = (state, action) => {
     switch (action.type) {
-        case 'handleChange': {
+        case 'HANDLE_CHANGE': {
             const { name, value } = action.payload;
             return {
                 ...state,
@@ -74,8 +74,8 @@ function Contact() {
         if (!state.form.first_name.trim()) newErrors.first_name = 'First name is required';
         if (!state.form.last_name.trim()) newErrors.last_name = 'Last name is required';
         if (!/\S+@\S+\.\S+/.test(state.form.email)) newErrors.email = 'Email is invalid';
-        if (!/^\d{10}$/.test(state.form.phone)) newErrors.phone = 'Phone must be 10 digits';
-        if (!state.form.message.trim()) newErrors.message = 'Message is required';
+        if (!/^\d{10}$/.test(state.form.phone)) newErrors.phone = 'Phone number is invalid';
+        if (!state.form.message.trim() && state.form.message.length < 5) newErrors.message = 'Your message should be atleast 5 characters';
         return newErrors;
     };
 
@@ -106,8 +106,8 @@ function Contact() {
             postData();
         }
         setTimeout(() => {
-            setShowStatus(!showStatus)
-        }, 10000)
+            setShowStatus(false)
+        }, 5000)
     };
 
 
@@ -146,66 +146,87 @@ function Contact() {
                     <h2>Get In Touch</h2>
                     <form className="formGrid" noValidate onSubmit={handleSubmit}>
                         <div className="touchGridItem fname">
-                            <input
-                                type="text"
-                                id="first_name"
-                                name="first_name"
-                                value={state.form.first_name}
-                                className="input"
-                                placeholder="First Name"
-                                onChange={(e) => dispatch({ type: 'handleChange', payload: e.target })}
-                            />
-                            {state.errors.first_name && <p>{state.errors.first_name}</p>}
+                            <div>
+                                <input
+                                    type="text"
+                                    id="first_name"
+                                    name="first_name"
+                                    value={state.form.first_name}
+                                    className="input"
+                                    placeholder="First Name"
+                                    onChange={(e) => dispatch({ type: 'HANDLE_CHANGE', payload: e.target })}
+                                />
+                            </div>
+                            <p className="error">
+                                {state.errors.first_name && <p className="errorMsg">&#9888; {state.errors.first_name}</p>}
+                            </p>
                         </div>
                         <div className="touchGridItem lname">
-                            <input
-                                type="text"
-                                id="last_name"
-                                name="last_name"
-                                value={state.form.last_name}
-                                className="input"
-                                placeholder="Last Name"
-                                onChange={(e) => dispatch({ type: 'handleChange', payload: e.target })}
-                            />
-                            {state.errors.last_name && <p>{state.errors.last_name}</p>}
+                            <div>
+                                <input
+                                    type="text"
+                                    id="last_name"
+                                    name="last_name"
+                                    value={state.form.last_name}
+                                    className="input"
+                                    placeholder="Last Name"
+                                    onChange={(e) => dispatch({ type: 'HANDLE_CHANGE', payload: e.target })}
+                                />
+                            </div>
+                            <p className="error">
+                                {state.errors.last_name && <p className="errorMsg">&#9888; {state.errors.last_name}</p>}
+                            </p>
+
                         </div>
                         <div className="touchGridItem email">
-                            <input
-                                type="email"
-                                id="email"
-                                name="email"
-                                value={state.form.email}
-                                className="input"
-                                placeholder="Email"
-                                onChange={(e) => dispatch({ type: 'handleChange', payload: e.target })}
-                            />
-                            {state.errors.email && <p>{state.errors.email}</p>}
+                            <div>
+                                <input
+                                    type="email"
+                                    id="email"
+                                    name="email"
+                                    value={state.form.email}
+                                    className="input"
+                                    placeholder="Email"
+                                    onChange={(e) => dispatch({ type: 'HANDLE_CHANGE', payload: e.target })}
+                                />
+                            </div>
+                            <p className="error">
+                                {state.errors.email && <p className="errorMsg">&#9888; {state.errors.email}</p>}
+                            </p>
                         </div>
                         <div className="touchGridItem phone">
-                            <input
-                                type="tel"
-                                id="phone"
-                                name="phone"
-                                className="input"
-                                value={state.form.phone}
-                                placeholder="Phone"
-                                pattern="\d{10}"
-                                onChange={(e) => dispatch({ type: 'handleChange', payload: e.target })}
-                            />
-                            {state.errors.phone && <p>{state.errors.phone}</p>}
+                            <div>
+                                <input
+                                    type="tel"
+                                    id="phone"
+                                    name="phone"
+                                    className="input"
+                                    value={state.form.phone}
+                                    placeholder="Phone"
+                                    pattern="\d{10}"
+                                    onChange={(e) => dispatch({ type: 'HANDLE_CHANGE', payload: e.target })}
+                                />
+                            </div>
+                            <p className="error">
+                                {state.errors.phone && <p className="errorMsg">&#9888; {state.errors.phone}</p>}
+                            </p>
                         </div>
                         <div className="touchGridItem message">
-                            <textarea
-                                id="message"
-                                name="message"
-                                cols="30"
-                                rows="5"
-                                className="input"
-                                value={state.form.message}
-                                placeholder="Message"
-                                onChange={(e) => dispatch({ type: 'handleChange', payload: e.target })}
-                            ></textarea>
-                            {state.errors.message && <p>{state.errors.message}</p>}
+                            <div>
+                                <textarea
+                                    id="message"
+                                    name="message"
+                                    cols="30"
+                                    rows="5"
+                                    className="input"
+                                    value={state.form.message}
+                                    placeholder="Message"
+                                    onChange={(e) => dispatch({ type: 'HANDLE_CHANGE', payload: e.target })}
+                                ></textarea>
+                            </div>
+                            <p className="error">
+                                {state.errors.message && <p className="errorMsg">&#9888; {state.errors.message}</p>}
+                            </p>
                         </div>
                         <div className="touchGridItem submit">
                             <button
@@ -217,7 +238,9 @@ function Contact() {
                             </button>
                         </div>
                     </form>
-                    {showStatus && state.status && <p>{state.status}</p>}
+                    <p className="status">
+                        {showStatus && state.status && <p className="statusMsg">{state.status}</p>}
+                    </p>
                 </div>
             </div>
         </div>

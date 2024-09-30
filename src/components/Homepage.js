@@ -7,6 +7,7 @@ import Work from "./Work";
 import "../styles/homepage.css";
 import Contact from "./Contact";
 import Shader from "./Shader";
+import Navbar from "./Navbar";
 function Homepage() {
     useEffect(() => {
         const lightElement = document.querySelector(".light");
@@ -34,17 +35,20 @@ function Homepage() {
     }, []);
     return (
         <div>
+            <Navbar></Navbar>
             <Shader></Shader>
-            <Homecontent></Homecontent>
-            <div>
-                {/* <h1 className='hint'>Hint: move your cursor</h1> */}
-                <div className="light">
-                    <Hoverpage></Hoverpage>
+            <div style={{ position: 'relative', top: '5.6rem', overflow: 'hidden' }}>
+                <Homecontent></Homecontent>
+                <div>
+                    {/* <h1 className='hint'>Hint: move your cursor</h1> */}
+                    <div className="light">
+                        <Hoverpage></Hoverpage>
+                    </div>
                 </div>
+                <About></About>
+                <Work></Work>
+                <Contact></Contact>
             </div>
-            <About></About>
-            <Work></Work>
-            <Contact></Contact>
         </div>
     );
 }

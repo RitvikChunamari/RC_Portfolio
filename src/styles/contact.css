@@ -27,20 +27,19 @@
 .contactGridItem {
   border-radius: 20px;
   min-height: 400px;
+  row-gap: 10px;
 }
 
 .contactContent {
-  font-size: clamp(24px, 3vw, 32px );
+  font-size: clamp(24px, 3vw, 32px);
   font-weight: 500;
   padding: 1em;
 }
 
 .cg1 {
-  background: linear-gradient(
-    to bottom,
-    #070497 0%,
-    rgba(4, 0, 181, 0.18) 100%
-  );
+  background: linear-gradient(to bottom,
+      #070497 0%,
+      rgba(4, 0, 181, 0.18) 100%);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -93,6 +92,33 @@
 
 .submit {
   display: flex;
+  padding-top: 5px;
+}
+
+.errorMsg {
+  color: rgb(255, 37, 37);
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.statusMsg {
+  color: green;
+  font-weight: 500;
+}
+
+.error {
+  height: 10px;
+  visibility: none;
+  display: flex;
+  justify-content: flex-start;
+  padding: 3px 0 0 5px;
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: rgb(134, 134, 134);
+  font-weight: 400;
+  font-size: 18px;
 }
 
 input,
@@ -156,7 +182,6 @@ textarea.input {
   line-height: 1.5;
   margin: 0;
   -webkit-mask-image: -webkit-radial-gradient(#000, #fff);
-  padding: 10;
   text-transform: uppercase;
 }
 
@@ -183,15 +208,13 @@ textarea.input {
 
 .btn-12:after,
 .btn-12:before {
-  background: linear-gradient(
-    90deg,
-    #fff 25%,
-    transparent 0,
-    transparent 50%,
-    #fff 0,
-    #fff 75%,
-    transparent 0
-  );
+  background: linear-gradient(90deg,
+      #fff 25%,
+      transparent 0,
+      transparent 50%,
+      #fff 0,
+      #fff 75%,
+      transparent 0);
   content: "";
   inset: 0;
   position: absolute;
@@ -201,16 +224,14 @@ textarea.input {
 
 .btn-12:after {
   --progress: -100%;
-  background: linear-gradient(
-    90deg,
-    transparent 0,
-    transparent 25%,
-    #fff 0,
-    #fff 50%,
-    transparent 0,
-    transparent 75%,
-    #fff 0
-  );
+  background: linear-gradient(90deg,
+      transparent 0,
+      transparent 25%,
+      #fff 0,
+      #fff 50%,
+      transparent 0,
+      transparent 75%,
+      #fff 0);
   z-index: -1;
 }
 
@@ -249,5 +270,9 @@ textarea.input {
 
   .btn-12 {
     max-width: 180px;
+  }
+
+  .submit {
+    padding-top: 18px;
   }
 }

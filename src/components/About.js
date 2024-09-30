@@ -1,5 +1,5 @@
 
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Skillbtn from '../components/Skillbtn';
 import '../styles/about.css';
 
@@ -29,6 +29,91 @@ const About = () => {
     const handleMouseLeave = () => {
         setHoveredButton(null);
     };
+
+    useEffect(() => {
+        const applyTorchEffect = (container) => {
+            const torch = document.createElement('div');
+            torch.className = 'torch';
+            const torchContainer = document.createElement('div');
+            torchContainer.className = 'torch-container';
+            torchContainer.appendChild(torch);
+            container.appendChild(torchContainer);
+
+            const borderHighlights = ['top', 'right', 'bottom', 'left'].map(side => {
+                const highlight = document.createElement('div');
+                highlight.className = `border-highlight border-highlight-${side}`;
+                container.appendChild(highlight);
+                return highlight;
+            });
+
+            const handleMouseMove = (e) => {
+                const rect = container.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+
+                torch.style.left = `${x - 500}px`;
+                torch.style.top = `${y - 500}px`;
+                torch.style.opacity = '0.3';
+
+                const highlightSize = 200;
+                const detectionDistance = 200;
+
+                borderHighlights.forEach((highlight, index) => {
+                    let distance, gradientIntensity;
+                    switch (index) {
+                        case 0: // Top
+                            distance = y;
+                            highlight.style.width = `${Math.min(highlightSize, rect.width)}px`;
+                            highlight.style.left = `${Math.max(0, x - highlightSize / 2)}px`;
+                            break;
+                        case 1: // Right
+                            distance = rect.width - x;
+                            highlight.style.height = `${Math.min(highlightSize, rect.height)}px`;
+                            highlight.style.top = `${Math.max(0, y - highlightSize / 2)}px`;
+                            break;
+                        case 2: // Bottom
+                            distance = rect.height - y;
+                            highlight.style.width = `${Math.min(highlightSize, rect.width)}px`;
+                            highlight.style.left = `${Math.max(0, x - highlightSize / 2)}px`;
+                            break;
+                        case 3: // Left
+                            distance = x;
+                            highlight.style.height = `${Math.min(highlightSize, rect.height)}px`;
+                            highlight.style.top = `${Math.max(0, y - highlightSize / 2)}px`;
+                            break;
+                    }
+
+                    gradientIntensity = Math.max(0, 1 - (distance / detectionDistance));
+                    highlight.style.background = `radial-gradient(circle, rgba(255, 255, 255, ${gradientIntensity}) 0%, rgba(255, 255, 255, 0) 70%)`;
+                    highlight.style.opacity = gradientIntensity > 0 ? '1' : '0';
+                });
+            };
+
+            const handleMouseLeave = () => {
+                torch.style.opacity = '0';
+                borderHighlights.forEach(highlight => highlight.style.opacity = '0');
+            };
+
+            container.addEventListener('mousemove', handleMouseMove);
+            container.addEventListener('mouseleave', handleMouseLeave);
+
+            return () => {
+                container.removeEventListener('mousemove', handleMouseMove);
+                container.removeEventListener('mouseleave', handleMouseLeave);
+                container.removeChild(torchContainer);
+                borderHighlights.forEach(highlight => container.removeChild(highlight));
+            };
+        };
+
+        const aboutBox = document.querySelector('.box.about');
+        const skillsBox = document.querySelector('.box.skills');
+        const certBox = document.querySelector('.box.cert');
+
+        if (aboutBox) applyTorchEffect(aboutBox);
+        if (skillsBox) applyTorchEffect(skillsBox);
+        if (certBox) applyTorchEffect(certBox);
+
+    }, []);
 
     return (
         <div className="maincont">
