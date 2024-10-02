@@ -1,14 +1,44 @@
-import React, { useEffect } from "react";
-// import Navbar from './Navbar'
+import "../styles/homepage.css";
+import React, { useEffect, useLayoutEffect, useRef } from "react";
+import gsap from "gsap";
 import Homecontent from "./Homecontent";
 import Hoverpage from "./Hoverpage";
 import About from "./About";
 import Work from "./Work";
-import "../styles/homepage.css";
 import Contact from "./Contact";
 import Shader from "./Shader";
 import Navbar from "./Navbar";
+
 function Homepage() {
+    const comp = useRef(null);
+    const blackScreenRef = useRef(null);
+    const contentRef = useRef(null);
+
+    useLayoutEffect(() => {
+        let ctx = gsap.context(() => {
+            const t1 = gsap.timeline();
+
+            gsap.set(contentRef.current, { opacity: 0 });
+
+            t1.set(blackScreenRef.current, { backgroundColor: "black", zIndex: 1000 })
+                .to(blackScreenRef.current, {
+                    duration: 0.6,
+                    opacity: 1
+                })
+                .to(contentRef.current, {
+                    duration: 0.2,
+                    opacity: 1,
+                })
+                .to(blackScreenRef.current, {
+                    duration: 0.5,
+                    opacity: 0,
+                    zIndex: -1
+                });
+        }, comp);
+
+        return () => ctx.revert();
+    }, []);
+
     useEffect(() => {
         const lightElement = document.querySelector(".light");
 
@@ -33,21 +63,24 @@ function Homepage() {
             };
         }
     }, []);
+
     return (
-        <div>
-            <Navbar></Navbar>
-            <Shader></Shader>
-            <div style={{ position: 'relative', top: '5.6rem', overflow: 'hidden' }}>
-                <Homecontent></Homecontent>
-                <div>
-                    {/* <h1 className='hint'>Hint: move your cursor</h1> */}
-                    <div className="light">
-                        <Hoverpage></Hoverpage>
+        <div className="preloader" ref={comp}>
+            <div ref={blackScreenRef} style={{ position: 'fixed', top: 0, left: 0, right: 0, bottom: 0, backgroundColor: 'black', zIndex: 1000 }}></div>
+            <div id="slider" ref={contentRef} style={{ backgroundColor: "transparent" }}>
+                <Navbar />
+                <Shader />
+                <div style={{ position: 'relative', top: '5.6rem', overflow: 'hidden' }}>
+                    <Homecontent />
+                    <div>
+                        <div className="light">
+                            <Hoverpage />
+                        </div>
                     </div>
+                    <About />
+                    <Work />
+                    <Contact />
                 </div>
-                <About></About>
-                <Work></Work>
-                <Contact></Contact>
             </div>
         </div>
     );

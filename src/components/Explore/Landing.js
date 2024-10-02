@@ -22,7 +22,7 @@ function Landing() {
                 torch.style.opacity = '1';
 
                 const highlightSize = 150;
-                const detectionDistance = 80;
+                const detectionDistance = 200;
 
                 borderHighlights.forEach((highlight, index) => {
                     let distance, gradientIntensity;

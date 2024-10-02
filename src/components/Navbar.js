@@ -1,6 +1,7 @@
 import React from 'react'
 import { Link } from 'react-scroll'
 import '../styles/navbar.css'
+import CustomNavLink from './CustomNavLink'
 function Navbar() {
     return (
         <div >
@@ -22,16 +23,18 @@ function Navbar() {
                 <a className='logo'>RC</a>
 
                 <div className="links-container">
-                    <Link to="home"
+                    <CustomNavLink
+                        to="home"
                         spy={true}
                         smooth={true}
-                        delay={0}
                         offset={-300}
                         duration={50}
-                        className='fancy'>
+                        className='fancy'
+                    >
                         Home
-                    </Link>
-                    <Link to="hover"
+                    </CustomNavLink>
+                    <CustomNavLink
+                        to="hover"
                         spy={true}
                         smooth={true}
                         offset={-130}
@@ -39,8 +42,9 @@ function Navbar() {
                         duration={50}
                         className='fancy'>
                         Resume
-                    </Link>
-                    <Link to="about"
+                    </CustomNavLink>
+                    <CustomNavLink
+                        to="about"
                         spy={true}
                         smooth={true}
                         offset={-200}
@@ -48,8 +52,9 @@ function Navbar() {
                         duration={50}
                         className='fancy'>
                         About
-                    </Link>
-                    <Link to="work"
+                    </CustomNavLink>
+                    <CustomNavLink
+                        to="work"
                         spy={true}
                         smooth={true}
                         offset={-50}
@@ -57,8 +62,9 @@ function Navbar() {
                         duration={50}
                         className='fancy'>
                         Work
-                    </Link>
-                    <Link to="contact"
+                    </CustomNavLink>
+                    <CustomNavLink
+                        to="contact"
                         spy={true}
                         smooth={true}
                         offset={-10}
@@ -66,7 +72,7 @@ function Navbar() {
                         duration={50}
                         className='fancy'>
                         Contact
-                    </Link>
+                    </CustomNavLink>
                     <section className="socials">
                         <svg width="24" height="24" viewBox="0 0 49 48" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <g clip-path="url(#clip0_16_84)">

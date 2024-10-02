@@ -34,22 +34,22 @@ function Work() {
                 borderHighlights.forEach((highlight, index) => {
                     let distance, gradientIntensity;
                     switch (index) {
-                        case 0: // Top
+                        case 0:
                             distance = y;
                             highlight.style.width = `${Math.min(highlightSize, rect.width)}px`;
                             highlight.style.left = `${Math.max(0, x - highlightSize / 2)}px`;
                             break;
-                        case 1: // Right
+                        case 1:
                             distance = rect.width - x;
                             highlight.style.height = `${Math.min(highlightSize, rect.height)}px`;
                             highlight.style.top = `${Math.max(0, y - highlightSize / 2)}px`;
                             break;
-                        case 2: // Bottom
+                        case 2:
                             distance = rect.height - y;
                             highlight.style.width = `${Math.min(highlightSize, rect.width)}px`;
                             highlight.style.left = `${Math.max(0, x - highlightSize / 2)}px`;
                             break;
-                        case 3: // Left
+                        case 3: 
                             distance = x;
                             highlight.style.height = `${Math.min(highlightSize, rect.height)}px`;
                             highlight.style.top = `${Math.max(0, y - highlightSize / 2)}px`;
