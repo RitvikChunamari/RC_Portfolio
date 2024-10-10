@@ -79,11 +79,11 @@ function Contact() {
     };
 
     const postData = () => {
-        axios.post('http://localhost:5000/api/contact', state.form)
+        axios.post('https://rc-portfolio-backend.onrender.com/api/contact', state.form)
             .then((res) => {
                 dispatch({
                     type: 'POST_DATA_SUCCESS',
-                    payload: "Thank You!, Your message has been recorded."
+                    payload: "Thank You!, Your message has been submitted."
                 });
             })
             .catch((err) => {
