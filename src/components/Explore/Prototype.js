@@ -42,6 +42,7 @@ const DummyContent = ({ img }) => {
                     src={img}
                     alt="dummy image"
                     className="w-full h-auto max-h-full object-contain rounded-2xl"
+                    loading='lazy'
                 />
             </div>
         </div>

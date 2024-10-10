@@ -2,18 +2,17 @@ import React from 'react';
 import { Link as RouterLink, useLocation, useNavigate } from 'react-router-dom';
 import { Link as ScrollLink, scroller } from 'react-scroll';
 
-const CustomNavLink = ({ to, spy, smooth, offset, duration, className, children }) => {
+const CustomNavLink = ({ to, spy, smooth, offset, duration, className, children, targetPage, targetSection }) => {
     const location = useLocation();
     const navigate = useNavigate();
-    const isHomePage = location.pathname === '/';
+    const isTargetPage = location.pathname === targetPage;
 
     const handleClick = (event) => {
-        if (!isHomePage) {
+        if (!isTargetPage) {
             event.preventDefault();
-            navigate('/');
-            // Wait for navigation to complete before scrolling
+            navigate(targetPage);
             setTimeout(() => {
-                scroller.scrollTo(to, {
+                scroller.scrollTo(targetSection, {
                     spy: spy,
                     smooth: smooth,
                     offset: offset,
@@ -23,10 +22,10 @@ const CustomNavLink = ({ to, spy, smooth, offset, duration, className, children 
         }
     };
 
-    if (isHomePage) {
+    if (isTargetPage) {
         return (
             <ScrollLink
-                to={to}
+                to={targetSection}
                 spy={spy}
                 smooth={smooth}
                 offset={offset}
@@ -39,7 +38,7 @@ const CustomNavLink = ({ to, spy, smooth, offset, duration, className, children 
     } else {
         return (
             <RouterLink
-                to="/"
+                to={targetPage}
                 className={className}
                 onClick={handleClick}
             >

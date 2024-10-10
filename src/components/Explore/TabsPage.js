@@ -18,14 +18,14 @@ function TabsPage() {
                 <Tab eventKey="home" title="Landing" >
                     <div className={styles.tabContent}>
                         <div className={styles.imagecontainer}>
-                            <img src={contact} alt="Landing page" />
+                            <img src={contact} alt="Landing page" loading='lazy' />
                         </div>
                     </div>
                 </Tab>
                 <Tab eventKey="profile" title="Contact">
                     <div className={styles.tabContent}>
                         <div className={styles.imagecontainer}>
-                            <img src={contact} alt="Contact page" />
+                            <img src={contact} alt="Contact page" loading='lazy' />
                         </div>
                     </div>
                 </Tab>

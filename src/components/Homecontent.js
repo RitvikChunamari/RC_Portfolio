@@ -17,7 +17,7 @@ function Homecontent() {
                     </div>
                 </div>
                 <div className={styles.memoji}>
-                    <img src={memoji} alt="Memoji" />
+                    <img src={memoji} alt="Memoji" loading='lazy' />
                 </div>
             </div>
         </div>

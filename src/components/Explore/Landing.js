@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
 import '../../styles/Explore/landing.css'
 
-function Landing() {
+function Landing({ work }) {
     useEffect(() => {
         const applyTorchEffect = (container) => {
             const torch = container.querySelector('.torch');
@@ -17,8 +17,8 @@ function Landing() {
                 const x = e.clientX - rect.left;
                 const y = e.clientY - rect.top;
 
-                torch.style.left = `${x - 500}px`;
-                torch.style.top = `${y - 500}px`;
+                torch.style.left = `${x - 150}px`;
+                torch.style.top = `${y - 150}px`;
                 torch.style.opacity = '1';
 
                 const highlightSize = 150;
@@ -27,22 +27,22 @@ function Landing() {
                 borderHighlights.forEach((highlight, index) => {
                     let distance, gradientIntensity;
                     switch (index) {
-                        case 0: // Top
+                        case 0:
                             distance = y;
                             highlight.style.width = `${Math.min(highlightSize, rect.width)}px`;
                             highlight.style.left = `${Math.max(0, x - highlightSize / 2)}px`;
                             break;
-                        case 1: // Right
+                        case 1:
                             distance = rect.width - x;
                             highlight.style.height = `${Math.min(highlightSize, rect.height)}px`;
                             highlight.style.top = `${Math.max(0, y - highlightSize / 2)}px`;
                             break;
-                        case 2: // Bottom
+                        case 2:
                             distance = rect.height - y;
                             highlight.style.width = `${Math.min(highlightSize, rect.width)}px`;
                             highlight.style.left = `${Math.max(0, x - highlightSize / 2)}px`;
                             break;
-                        case 3: // Left
+                        case 3:
                             distance = x;
                             highlight.style.height = `${Math.min(highlightSize, rect.height)}px`;
                             highlight.style.top = `${Math.max(0, y - highlightSize / 2)}px`;
@@ -78,9 +78,9 @@ function Landing() {
 
     }, []);
     return (
-        <div className="landingContainer">
+        <div className="landingContainer" id='landing'>
             <div className="landing_heading">
-                <p>Security Agency Landing Page</p>
+                <p>{work.heading}</p>
             </div>
             <div className='landing'>
                 <div className="secLandingItem summary">
@@ -90,17 +90,22 @@ function Landing() {
                     </div>
                 </div>
                 <div className="secLandingItem summaryContent">
-                    <p>This UX project focused on designing a high-performing landing page for a security agency. The primary goal was to not only clearly communicate the agency's services but also cultivate trust and encourage visitors to take action, whether it's requesting a quote or contacting them directly.</p>
+                    <div className='content_title'>
+                        <span>Summary</span>
+                    </div>
+                    <p>{work.summaryContent}</p>
                     <div className="torch-container">
                         <div className="torch"></div>
                     </div>
                 </div>
                 <div className="secLandingItem objContent">
+                    <div className='content_title'>
+                        <span>Objectives</span>
+                    </div>
                     <ul>
-                        <li><strong>Clarity </strong>: Clearly communicate the agency's security services and their benefits.</li>
-                        <li><strong>Engagement</strong> : Capture visitor attention and keep them interested in the page content.</li>
-                        <li><strong>Conversion</strong> : Encourage users to take desired actions (e.g., request quote, contact agency).</li>
-                        <li><strong>Accessibility</strong> : Ensure the landing page is user-friendly and accessible</li>
+                        {work.Objectives.map((obj, index) => (
+                            <li key={index}><strong>{obj.title}</strong>: {obj.content}</li>
+                        ))}
                     </ul>
                     <div className="torch-container">
                         <div className="torch"></div>

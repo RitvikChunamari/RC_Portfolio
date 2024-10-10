@@ -5,6 +5,7 @@ import '../styles/about.css';
 
 const About = () => {
     const [hoveredButton, setHoveredButton] = useState(null);
+    const [hoveredCert, setHoveredCert] = useState(null);
 
     const buttons = [
         { name: 'UX Design', content: 'Designing intuitive user interfaces and improving user experience' },
@@ -18,9 +19,9 @@ const About = () => {
         { name: 'Analytical', content: 'A Process of identifying and solving problems in many different contexts' }
     ];
     const certificatebtn = [
-        { name: 'Cert1', content: 'Designing intuitive user interfaces and improving user experience' },
-        { name: 'cert2', content: 'Collaborative interface design tool for team projects' },
-        { name: 'cert3', content: ' A software application for image editing, graphic design, and digital art' },
+        { name: 'FutureLearn', link: 'https://www.futurelearn.com/certificates/exxyiig' },
+        { name: 'Internship', link: 'https://coursera.org/share/abb217e1c3c3c8c659fdf2077fb7a760' },
+        { name: 'UX Design', link: 'https://www.coursera.org/account/accomplishments/verify/0FF0SQU18YAF' },
     ];
     const handleMouseEnter = (index) => {
         setHoveredButton(index);
@@ -28,6 +29,19 @@ const About = () => {
 
     const handleMouseLeave = () => {
         setHoveredButton(null);
+    };
+
+    const handleCertMouseEnter = (index) => {
+        setHoveredCert(index);
+    };
+
+    const handleCertMouseLeave = () => {
+        setHoveredCert(null);
+    };
+
+    const handleCertClick = (e, link) => {
+        e.preventDefault()
+        window.open(link, '_blank', 'noopener,noreferrer');
     };
 
     useEffect(() => {
@@ -51,8 +65,8 @@ const About = () => {
                 const x = e.clientX - rect.left;
                 const y = e.clientY - rect.top;
 
-                torch.style.left = `${x - 500}px`;
-                torch.style.top = `${y - 500}px`;
+                torch.style.left = `${x - 150}px`;
+                torch.style.top = `${y - 150}px`;
                 torch.style.opacity = '0.3';
 
                 const highlightSize = 200;
@@ -171,10 +185,36 @@ const About = () => {
                     <div className='box cert'>
                         <p className='abt_heading'>Certifications</p>
                         <div className="certCont">
-                            <div className='certgrid '>
-                                <Skillbtn btnName={"UX Design"} certclass={"certbtn"}></Skillbtn>
-                                <Skillbtn btnName={"Figma"} certclass={"certbtn"}></Skillbtn>
-                                <Skillbtn btnName={"Photoshop"} certclass={"certbtn"}></Skillbtn>
+                            <div className='certgrid'>
+                                {certificatebtn.map((cert, index) => (
+                                    <div
+                                        key={index}
+                                        className={`cert-button-container ${hoveredCert === index ? 'expanded' : ''} ${hoveredCert !== null && hoveredCert !== index ? 'hidden' : ''
+                                            }`}
+                                        onMouseEnter={() => handleCertMouseEnter(index)}
+                                        onMouseLeave={handleCertMouseLeave}
+                                    >
+                                        <div className="cert-button-content">
+                                            <Skillbtn
+                                                btnName={cert.name}
+                                                certclass="certbtn"
+                                                isHovered={hoveredCert === index}
+                                            />
+                                            <div className="cert-content">
+                                                <p className='cert_name'>{cert.name}</p>
+                                                <a
+                                                    href={cert.link}
+                                                    target="_blank"
+                                                    rel="noopener noreferrer"
+                                                    onClick={(e) => handleCertClick(e, cert.link)}
+                                                    className='link_text'
+                                                >
+                                                    {cert.link}
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                ))}
                             </div>
                         </div>
                     </div>

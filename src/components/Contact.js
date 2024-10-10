@@ -1,7 +1,6 @@
 import React, { useReducer, useState } from "react";
 import "../styles/contact.css";
 import axios from 'axios';
-// import { animateScroll as scroll } from "react-scroll";
 import { useLayoutEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -84,13 +83,13 @@ function Contact() {
             .then((res) => {
                 dispatch({
                     type: 'POST_DATA_SUCCESS',
-                    payload: "Form successfully submitted"
+                    payload: "Thank You!, Your message has been recorded."
                 });
             })
             .catch((err) => {
                 dispatch({
                     type: 'POST_DATA_ERROR',
-                    payload: `There was an error submitting the form - ${err.response.data}`
+                    payload: `There was an error submitting your message, please try again later. - ${err.response.data}`
                 });
             });
     };
@@ -104,13 +103,12 @@ function Contact() {
         } else {
             dispatch({ type: 'UNSET_ERRORS' })
             postData();
+            setShowStatus(true);
+            setTimeout(() => {
+                setShowStatus(false)
+            }, 5000)
         }
-        setTimeout(() => {
-            setShowStatus(false)
-        }, 5000)
     };
-
-
 
     //GSAP
     const container = useRef(null);
@@ -232,9 +230,8 @@ function Contact() {
                             <button
                                 type="submit"
                                 className="btn-12"
-
                             >
-                                Submit
+                                <span>Submit</span>
                             </button>
                         </div>
                     </form>

@@ -1,16 +1,16 @@
-import React, { useEffect } from "react";
+import React from "react";
 import "../../styles/Explore/userpersonas.css";
 import PersonaSection from '../Explore/PersonaSection';
-import { personaData1, personaData2 } from '../Explore/personData';
 
-function UserPersonas() {
+function UserPersonas({ persona }) {
     return (
         <div className="personacontainer">
             <div className="user_persona_heading">
                 <p>User Personas</p>
             </div>
-            <PersonaSection persona={personaData1} />
-            <PersonaSection persona={personaData2} />
+            {persona.map((personaData, index) => (
+                <PersonaSection key={index} persona={personaData} />
+            ))}
         </div>
     );
 }

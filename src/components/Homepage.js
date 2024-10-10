@@ -22,8 +22,8 @@ function Homepage() {
 
             t1.set(blackScreenRef.current, { backgroundColor: "black", zIndex: 1000 })
                 .to(blackScreenRef.current, {
-                    duration: 0.6,
-                    opacity: 1
+                    duration: 0.8,
+                    opacity: 1,
                 })
                 .to(contentRef.current, {
                     duration: 0.2,
@@ -32,7 +32,7 @@ function Homepage() {
                 .to(blackScreenRef.current, {
                     duration: 0.5,
                     opacity: 0,
-                    zIndex: -1
+                    zIndex: -1,
                 });
         }, comp);
 
@@ -66,11 +66,28 @@ function Homepage() {
 
     return (
         <div className="preloader" ref={comp}>
-            <div ref={blackScreenRef} style={{ position: 'fixed', top: 0, left: 0, right: 0, bottom: 0, backgroundColor: 'black', zIndex: 1000 }}></div>
-            <div id="slider" ref={contentRef} style={{ backgroundColor: "transparent" }}>
+            <div
+                ref={blackScreenRef}
+                style={{
+                    position: "fixed",
+                    top: 0,
+                    left: 0,
+                    right: 0,
+                    bottom: 0,
+                    backgroundColor: "black",
+                    zIndex: 1000,
+                }}
+            ></div>
+            <div
+                id="slider"
+                ref={contentRef}
+                style={{ backgroundColor: "transparent" }}
+            >
                 <Navbar />
                 <Shader />
-                <div style={{ position: 'relative', top: '5.6rem', overflow: 'hidden' }}>
+                <div
+                    style={{ position: "relative", top: "5.6rem", overflow: "hidden" }}
+                >
                     <Homecontent />
                     <div>
                         <div className="light">

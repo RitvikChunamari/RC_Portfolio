@@ -25,7 +25,7 @@
 }
 
 .contactGridItem {
-  border-radius: 20px;
+  border-radius: 8px;
   min-height: 400px;
   row-gap: 10px;
 }
@@ -48,6 +48,7 @@
 .contact_heading {
   font-size: clamp(24px, 5vw, 48px);
   font-weight: 700;
+  margin-bottom: 3rem;
 }
 
 .cg2 {
@@ -75,7 +76,7 @@
 }
 
 .touchGridItem {
-  border-radius: 20px;
+  border-radius: 8px;
 }
 
 .fname,
@@ -106,7 +107,7 @@
   font-weight: 500;
 }
 
-.error {
+.error, .status {
   height: 10px;
   visibility: none;
   display: flex;
