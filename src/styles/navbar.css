@@ -38,6 +38,7 @@ nav .logo {
   font-size: 38px;
   margin-left: 82px;
   font-weight: bold;
+  cursor: pointer;
 }
 
 .socials {
@@ -192,6 +193,9 @@ nav .logo {
     ;
   }
 
+  .links-container a:active ~ #sidebar-active {
+    display: none;
+  }
   .card {
     justify-content: center;
     width: 100%;

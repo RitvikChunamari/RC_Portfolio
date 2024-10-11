@@ -41,10 +41,9 @@ function Navbar() {
                     type="checkbox"
                     id="sidebar-active"
                     checked={isSidebarOpen}
-                    onChange={handleSidebarToggle}  // Handle sidebar toggle
+                    onChange={handleSidebarToggle}
                 />
 
-                {/* <div className='sidebar-btn'> */}
                 <label htmlFor="sidebar-active" className='open-sidebar-button'>
                     <div>
                         <svg xmlns="http://www.w3.org/2000/svg" height="32" viewBox="0 -960 960 960" width="32" fill="#e8eaed"><path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z" /></svg>
@@ -55,9 +54,18 @@ function Navbar() {
                         <svg xmlns="http://www.w3.org/2000/svg" height="32" viewBox="0 -960 960 960" width="32" fill="#e8eaed"><path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z" /></svg>
                     </div>
                 </label>
-                {/* </div> */}
-                <a className='logo'>RC</a>
-
+                <CustomNavLink
+                    to="/"
+                    targetPage="/"
+                    targetSection="home"
+                    spy={true}
+                    smooth={true}
+                    offset={-300}
+                    duration={50}
+                    className='logo'
+                >
+                    RC
+                </CustomNavLink>
                 <div className="links-container">
                     <CustomNavLink
                         to="/"
