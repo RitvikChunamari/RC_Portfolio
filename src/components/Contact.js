@@ -79,7 +79,7 @@ function Contact() {
     };
 
     const postData = () => {
-        axios.post('https://rc-portfolio-backend.onrender.com/api/contact', state.form)
+        axios.post('https://rc-api-w946.onrender.com/api/contact', state.form)
             .then((res) => {
                 dispatch({
                     type: 'POST_DATA_SUCCESS',
