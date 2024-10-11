@@ -79,13 +79,10 @@ function Contact() {
         return newErrors;
     };
 
+
     const postData = () => {
-<<<<<<< HEAD
-        axios.post('https://rc-api-w946.onrender.com/api/contact', state.form)
-=======
         setIsLoading(true)
-        axios.post('https://rc-portfolio-backend.onrender.com/api/contact', state.form)
->>>>>>> upstream/aceternity_branch
+        axios.post('https://rc-api-w946.onrender.com/api/contact', state.form)
             .then((res) => {
                 return res
             })
