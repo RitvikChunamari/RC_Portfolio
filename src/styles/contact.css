@@ -6,7 +6,6 @@
   justify-content: center;
   padding: 2em;
   margin: 0 auto;
-  /* border: 2px solid purple; */
   min-height: 100vh;
 }
 
@@ -60,6 +59,7 @@
   align-items: center;
   gap: 1.5em;
   padding: 20px;
+  min-height: 630px;
   box-shadow: 0px 4px 4px 0px rgb(0, 0, 0),
     1px 1px 29.6px 6px rgba(0, 0, 0, 0.546) inset;
 }
@@ -105,9 +105,10 @@
 .statusMsg {
   color: green;
   font-weight: 500;
+  font-size: clamp(14px, 3vw, 18px);
 }
 
-.error, .status {
+.error {
   height: 10px;
   visibility: none;
   display: flex;
@@ -266,7 +267,7 @@ textarea.input {
   }
 
   .contactGridItem {
-    min-height: 200px;
+    min-height: 300px;
   }
 
   .btn-12 {

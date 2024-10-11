@@ -4,6 +4,7 @@ import axios from 'axios';
 import { useLayoutEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import LoadingSpinner from "./LoadingSpinner";
 gsap.registerPlugin(ScrollTrigger);
 
 const initialFormState = {
@@ -67,7 +68,7 @@ const reducer = (state, action) => {
 function Contact() {
 
     const [state, dispatch] = useReducer(reducer, initialFormState);
-
+    const [isLoading, setIsLoading] = useState(false)
     const validateForm = () => {
         let newErrors = {};
         if (!state.form.first_name.trim()) newErrors.first_name = 'First name is required';
@@ -79,12 +80,21 @@ function Contact() {
     };
 
     const postData = () => {
+<<<<<<< HEAD
         axios.post('https://rc-api-w946.onrender.com/api/contact', state.form)
+=======
+        setIsLoading(true)
+        axios.post('https://rc-portfolio-backend.onrender.com/api/contact', state.form)
+>>>>>>> upstream/aceternity_branch
             .then((res) => {
+                return res
+            })
+            .then((data) => {
                 dispatch({
                     type: 'POST_DATA_SUCCESS',
                     payload: "Thank You!, Your message has been submitted."
                 });
+                setIsLoading(false)
             })
             .catch((err) => {
                 dispatch({
@@ -142,7 +152,7 @@ function Contact() {
 
                 <div className="contactGridItem cg2">
                     <h2>Get In Touch</h2>
-                    <form className="formGrid" noValidate onSubmit={handleSubmit}>
+                    {isLoading ? (<LoadingSpinner />) : <form className="formGrid" noValidate onSubmit={handleSubmit}>
                         <div className="touchGridItem fname">
                             <div>
                                 <input
@@ -234,9 +244,10 @@ function Contact() {
                                 <span>Submit</span>
                             </button>
                         </div>
-                    </form>
+                    </form>}
+
                     <p className="status">
-                        {showStatus && state.status && <p className="statusMsg">{state.status}</p>}
+                        {(showStatus && !isLoading) && state.status && <p className="statusMsg">{state.status}</p>}
                     </p>
                 </div>
             </div>
