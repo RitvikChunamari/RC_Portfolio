@@ -247,9 +247,9 @@ function Contact() {
                         {(showStatus && !isLoading) && state.status && <p className="statusMsg">{state.status}</p>}
                     </p>
                 </div>
-                <div className="credit" style={{ margin: "0 auto", paddingTop: "20px" }}>
+            </div>
+            <div className="credit" style={{ margin: "0 auto", paddingTop: "20px" }}>
                     <p style={{ textAlign: "center" }}>Designed by <strong>Ritvik Chunamari</strong>. Developed by <strong>Mithilesh Yadawad</strong></p>
-                </div>
             </div>
         </div>
     );
