@@ -251,6 +251,7 @@ h2 {
   width: 100%;
   left: 0;
   z-index: 10;
+  min-height: 80px;
   transition: all 0.3s ease;
 }
 
@@ -321,6 +322,13 @@ h2 {
   text-decoration: underline;
 }
 
+#c_links {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  list-style: none;
+}
+
 @media (max-width: 1100px) {
   .container {
     max-width: 100%;
@@ -345,6 +353,10 @@ h2 {
   .certgrid {
     grid-template-columns: repeat(2, 1fr);
   }
+
+  .cert-button-container.expanded {
+    min-height: 60px;
+  }
 }
 
 @media (max-width: 480px) {
@@ -352,6 +364,10 @@ h2 {
   .grid,
   .certgrid {
     grid-template-columns: 1fr;
+  }
+
+  .certCont {
+    min-height: 250px;
   }
 
   .container {
@@ -382,6 +398,6 @@ h2 {
 
   .cert-button-container.expanded {
     height: auto;
-    min-height: 70px;
+    min-height: 72px;
   }
 }
