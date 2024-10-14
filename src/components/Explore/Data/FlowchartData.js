@@ -10,9 +10,9 @@ export const LandingFlowMind = [
         alt: "Mindmap"
     },
     {
-        title: "Flowchart",
+        title: "User Flow",
         src: LandingFlowchart,
-        alt: "Flowchart"
+        alt: "User Flow"
     }
 ]
 
@@ -23,8 +23,8 @@ export const AdminFlowMind = [
         alt: "Mindmap"
     },
     {
-        title: "Flowchart",
+        title: "User Flow",
         src: AdminFlowchart,
-        alt: "Flowchart"
+        alt: "User Flow"
     }
 ]
