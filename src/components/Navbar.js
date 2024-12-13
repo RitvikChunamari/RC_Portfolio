@@ -115,7 +115,7 @@ function Navbar() {
                         className='fancy'>
                         Contact
                     </CustomNavLink>
-                    <a href='https://drive.google.com/file/d/1WBph3l39673v5XPASKOPSTzjxBfBrNJ5/view?usp=sharing'
+                    <a href='https://drive.google.com/file/d/1JVokjw8J_lXkBdOBCypmTSJCJvUd3ZoN/view?usp=drive_link'
                         className='fancy'>
                         Resume
                     </a>
